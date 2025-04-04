@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f6f6f6;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-theme .navbar {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .list {
+  background-color: #1e1e1e;
+}
+
+body.dark-theme .list > * {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #333333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .list > *:hover {
+  background-color: #333333;
+}
+
+body.dark-theme button {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+body.dark-theme button:hover {
+  background-color: #444444;
+}
+
+body.dark-theme .navbar-buttons button {
+  background-color: #444;
+  color: white;
+}
+
+body.dark-theme .navbar-buttons button:hover {
+  background-color: #555;
+}
+
+body.dark-theme .note-title {
+  color: #e0e0e0;
+}
+
+body.dark-theme .note-title:hover {
+  color: #ffffff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-buttons button {
+  padding: 8px 12px;
+  margin: 0;
+  font-size: 14px;
+  color: white;
+  background-color: #0056b3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.navbar-buttons button:hover {
+  background-color: #004085;
+  transform: scale(1.05);
+}
+
+.list {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+}
+
+.list > * {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.list > *:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.note-title {
+  cursor: pointer;
+  color: #313539;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.note-title:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.archive-button,
+.delete-button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-right: 5px;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.archive-button:hover,
+.delete-button:hover {
+  transform: translateY(-1px);
+}
+
+.archive-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.archive-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #a71d2a;
+}
+
+login-form {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#notesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+@media (max-width: 900px) {
+  #notesList {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  #notesList {
+    grid-template-columns: 1fr;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

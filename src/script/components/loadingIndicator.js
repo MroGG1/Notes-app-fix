@@ -6,10 +6,9 @@ class LoadingIndicator extends HTMLElement {
     this._container = document.createElement("div");
     this._container.setAttribute("class", "loading-container");
     this._container.innerHTML = `
-        <div class="spinner"></div>
-        <p>Loading...</p>
+      <div class="spinner"></div>
+      <p>Loading...</p>
       `;
-    this._container.style.display = "none";
   }
 
   _updateStyle() {
@@ -74,7 +73,6 @@ class LoadingIndicator extends HTMLElement {
   connectedCallback() {
     this._updateStyle();
     this.shadowRoot.append(this._style, this._container);
-    this.style.display = "none";
   }
 
   show() {
